@@ -1,5 +1,4 @@
 #include <sys/ioctl.h>
-#include <sys/ioctl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <linux/videodev2.h>
@@ -122,7 +121,7 @@ void RTSPStreamServer::get_v4l2_devices_info()
                 if (h264_index != -1) {
                     fmt.index = h264_index;
                     if (check_h264_ioctls(fd)) {
-                        info.camera_type = H264_CAM;
+                        info.camera_type = RPI_CAM;
                     } else {
                         info.camera_type = UVC_CAM;
                     }
